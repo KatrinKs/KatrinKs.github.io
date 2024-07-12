@@ -1,0 +1,111 @@
+/* Переменные */
+:root {
+    --color-base: hsl(37, 59%, 85%);
+    --color-green: #049a8e;
+    --background-black-opacity: rgb(0, 0, 0, 80%);
+}
+
+
+/* Общие стили */
+
+a {
+    color: var(--color-green);
+    text-decoration: none;   
+    transition: opacity 0.25s ease;
+}
+
+a:hover {
+    opacity: 70%;
+}
+
+/* Header styles*/
+
+.header {
+    position: relative;
+    height: 120vh;
+    clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 0 0);
+}
+
+.header__background {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(85%) saturate(140%);
+}
+
+.header-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 100px;
+
+    color: var(--color-base);
+    background: rgb(0, 0, 0, 85%);
+    
+    z-index: 2;
+}
+
+.header-top a {
+    color: var(--color-base);
+}
+
+.header-top a.active {
+    color: var(--color-green);
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul:hover {
+    opacity: 70%;
+}
+
+.menu-element {
+    margin-right: 20px;
+    font-size: 21px;
+}
+
+.menu-element:last-child {
+    margin-right: 0;
+}
+
+.header-center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(90vh - 85px);    
+
+    
+    color: var(--color-base);
+
+    z-index: 2;
+}
+
+.header-center__wrapper {
+    width: 100%;
+    padding: 20px 0;
+
+    text-align: center;
+    background: var(--background-black-opacity);
+}
+
+.name {
+    font-size: 50px;
+    line-height: 74px;
+}
+
+.description {
+    font-size: 22px;
+}
