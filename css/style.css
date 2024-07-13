@@ -1,27 +1,34 @@
 /* Переменные */
 :root {
     --color-base: hsl(37, 59%, 85%);
-    --color-green: #049a8e;
-    --background-black-opacity: rgb(0, 0, 0, 80%);
+    --color-green: #049654;
+    --background-black-opacity: rgba(0, 0, 0, 0.8);
 }
 
 
 /* Общие стили */
 
-a {
+a.link {
     color: var(--color-green);
     text-decoration: none;   
     transition: opacity 0.25s ease;
 }
 
-a:hover {
+a.link:hover {
     opacity: 70%;
+}
+
+.block-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Header styles*/
 
 .header {
     position: relative;
+    bottom: 100px;
     height: 120vh;
     clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 0 0);
 }
@@ -34,8 +41,18 @@ a:hover {
     filter: brightness(85%) saturate(140%);
 }
 
+.header__background-wrapper {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    background: rgb(0, 0, 0, 0);
+
+    z-index: 1;
+}
+
 .header-top {
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -43,35 +60,21 @@ a:hover {
     height: 100px;
 
     color: var(--color-base);
-    background: rgb(0, 0, 0, 85%);
+    background: rgba(0, 0, 0, .89);
     
-    z-index: 2;
+    z-index: 3;
 }
 
-.header-top a {
+.header-top a.link {
     color: var(--color-base);
-}
-
-.header-top a.active {
-    color: var(--color-green);
 }
 
 .logo {
     font-size: 30px;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-ul:hover {
-    opacity: 70%;
-}
-
 .menu-element {
-    margin-right: 20px;
+    margin-right: 25px;
     font-size: 21px;
 }
 
@@ -79,10 +82,21 @@ ul:hover {
     margin-right: 0;
 }
 
+.menu-element a.link.active, .menu-element a.link:hover {
+    color: var(--color-green);
+}
+
+.menu-element__link.home {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
 .switcher-wrapper {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 35px;
     width: 90px;
     padding: 0 10px;
@@ -146,7 +160,7 @@ ul:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(90vh - 85px);    
+    height: calc(110vh - 3.5%);    
 
     
     color: var(--color-base);
@@ -168,5 +182,36 @@ ul:hover {
 }
 
 .description {
+    display: inline-block;
+    width: 106ch;
+
     font-size: 22px;
+    line-height: 1.5em;
+    font-family: Courier, monospace;
+    white-space: nowrap;
+
+    border-right: 2px solid transparent;
+    overflow: hidden;
+
+    animation: cursor 0.5s 11, print-text 4s steps(80);
+}
+
+@keyframes cursor {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--color-base);
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes print-text {
+    from {
+        width: 0ch;
+    }
 }

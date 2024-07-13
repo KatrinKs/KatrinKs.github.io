@@ -11,49 +11,59 @@
     
 </head>
 <body>
-    <header class="header">
-        <img class="header__background" src="images/dereviannaia-stena-209.png" alt="background">
-        <div class="header-top">
-            <a href="" class="logo">Кальнеус Екатерина</a>
-            <nav class="navigation"> <!-- menu -->
-                <ul class="menu">
-                    <li class="menu-element">
-                        <a class="menu-element__link active" href="">Home</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">About</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Achievements</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Skills</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Work</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Interests</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Books</a>
-                    </li>
-                    <li class="menu-element">
-                        <a class="menu-element__link" href="">Contact me</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="header-top">
+        <a href="#home" class="link logo block-center">Кальнеус&nbsp;Екатерина</a>
 
-            <div class="switcher-wrapper">
-                <input type="radio" name="lang" id="lang-ru" checked>
-                <label class="switcher" for="lang-ru">Ru</label>
+        <nav class="navigation"> <!-- menu -->
+            <ul class="menu block-center">
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link active home block-center" href="#home">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path d="M19.006 3.705a.75.75 0 1 0-.512-1.41L6 6.838V3a.75.75 0 0 0-.75-.75h-1.5A.75.75 0 0 0 3 3v4.93l-1.006.365a.75.75 0 0 0 .512 1.41l16.5-6Z" />
+                            <path fill-rule="evenodd" d="M3.019 11.114 18 5.667v3.421l4.006 1.457a.75.75 0 1 1-.512 1.41l-.494-.18v8.475h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3v-9.129l.019-.007ZM18 20.25v-9.566l1.5.546v9.02H18Zm-9-6a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75H9Z" clip-rule="evenodd" />
+                          </svg>
+                          
+                    </a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#about-me">Обо&nbsp;мне</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#achievements">Достижения</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link -element__link" href="#skills">Навыки</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#work">Работа</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#interests">Интересы</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#books">Книги</a>
+                </li>
+                <li class="menu-element block-center">
+                    <a class="link menu-element__link" href="#contact-me">Связаться</a>
+                </li>
+            </ul>
+        </nav>
 
-                <input type="radio" name="lang" id="lang-eng">
-                <label class="switcher" for="lang-eng">Eng</label>
+        <div class="switcher-wrapper block-center">
+            <input type="radio" name="lang" id="lang-ru" checked>
+            <label class="switcher" for="lang-ru">Ru</label>
 
-                <span class="lang-placeholder"></span>
-            </div>
+            <input type="radio" name="lang" id="lang-eng">
+            <label class="switcher" for="lang-eng">Eng</label>
+
+            <span class="lang-placeholder"></span>
         </div>
+    </div>
+
+    <header class="header" id="home">
+        <img class="header__background" src="images/dereviannaia-stena-209.png" alt="background">
+        <div class="header__background-wrapper"></div>
+        
 
         <div class="header-center">
             <div class="header-center__wrapper">
@@ -63,7 +73,7 @@
         </div>
     </header>
 
-    <section class="about-me">
+    <section class="about-me" id="about-me">
         <div class="left">
             <img src="" alt="Аватар">
         </div>
@@ -93,7 +103,7 @@
         </div>
     </section>
 
-    <section class="achievements">
+    <section class="achievements" id="achievements">
         <h2 class="second-title">Достижения</h2>
 
         <ul class="achievements-lists">
@@ -105,7 +115,7 @@
         </ul>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
         <h2 class="second-title">Навыки</h2>
 
         <p class="section-description">Все оценки являются субъективными.</p>
@@ -147,7 +157,7 @@
         </div>
     </section>
 
-    <section class="work">
+    <section class="work" id="work">
         <h2 class="second-title">Работа</h2>
 
         <div class="work-element left">
@@ -247,7 +257,7 @@
         </div>
     </section>
 
-    <section class="interests">
+    <section class="interests" id="interests">
         <h2 class="second-title">Интересы</h2>
         <div class="interest-wrapper">
             <img src="" alt="" class="interest-image" />
@@ -299,7 +309,7 @@
         </div>
     </section>
 
-    <section class="books">
+    <section class="books" id="books">
         <h2 class="second-title">Прочитанные книги</h2>
 
         <p class="section-description">Здесь указаны книги, которые помогли развить навыки.</p>
@@ -313,7 +323,7 @@
         </ul>
     </section>
 
-    <section class="contact-me">
+    <section class="contact-me" id="contact-me">
         <h2 class="second-title">Обратная связь</h2>
 
         <form action="" class="contact-me__form">
@@ -338,10 +348,10 @@
     <footer>
         <ul class="socials">
             <li class="social-elemnt">
-                <a href="" class="social-element__link">VK</a>
+                <a href="" class="link social-element__link">VK</a>
             </li>
             <li class="social-elemnt">
-                <a href="" class="social-element__link">TG</a>
+                <a href="" class="link social-element__link">TG</a>
             </li>
         </ul>
 
