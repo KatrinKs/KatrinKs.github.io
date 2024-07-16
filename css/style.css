@@ -183,11 +183,10 @@ a.link:hover {
 
 .description {
     display: inline-block;
-    width: 1400px;
+    width: 1060px;
 
     font-size: 22px;
     line-height: 1.5em;
-    font-family: Courier, monospace;
     white-space: nowrap;
 
     border-right: 2px solid transparent;
