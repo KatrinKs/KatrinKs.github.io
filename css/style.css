@@ -3,11 +3,21 @@
     --color-base: rgb(239, 222, 194);
     --color-green: rgb(4, 149, 84);
     --color-text: rgb(51, 52, 51);
-    --color-gray: #5d6d57; 
+    --color-gray: rgb(93, 109, 87); 
     --background-black-opacity: rgba(0, 0, 0, 0.8);
     --section-background-color: rgba(4, 149, 84, 0.15);
     --box-background-color: rgba(255, 176, 115, 0.126); 
     --box-shadow: 0px 0px 17px rgba(51, 52, 51, 0.18);
+
+    /* Work vars */
+    --work-wrapper: 900px;
+    --work-element: 400px;
+    --work-year: 50px;
+    --work-border-left: 3px;
+
+    --work-margin: calc(var(--work-wrapper) / 2 - var(--work-element));
+    --work-indent-before: calc(0px - var(--work-margin));
+    --work-indent-after: calc(0px - var(--work-margin) - var(--work-year) / 2 - var(--work-border-left));
 }
 
 /* Header styles*/
@@ -292,8 +302,6 @@ ul.about-me__extra {
     bottom: -140px;
 }
 
-
-
 /* Skills */
 
 .skills {
@@ -361,12 +369,11 @@ ul.about-me__extra {
 }
 
 .skills-list__element > *:first-child {
-    flex: 1 1 30%;
-    max-width: 200px;
+    flex: 1 1 28%;
 }
 
 .skills-list__element > *:last-child {
-    flex: 1 1 70%;
+    flex: 1 1 72%;
     padding-left: 20px;
     font-size: 22px;
 }
@@ -407,10 +414,12 @@ ul.about-me__extra {
 }
 
 .skill-card__image {
+    flex: 1 1 30%;
     width: 100px;
 }
 
 .skill-card__name {
+    flex: 1 1 70%;
     padding-left: 20px;
     font-size: 24px;
 }
@@ -424,6 +433,226 @@ ul.about-me__extra {
 .skill-card__description {
     color: var(--color-text);
     text-align: justify;
+}
+
+/* Work */
+
+.work {
+    padding: 40px 0;
+}
+
+.work-wrapper {
+    position: relative;
+    flex-direction: column;
+    width: var(--work-wrapper);
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.work-wrapper::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 97%;
+    background: var(--color-gray);
+   top: 0;
+}
+
+.work-element {
+    position: relative;
+    width: var(--work-element);
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.work-element:before {
+    content: "";
+    top: calc(var(--work-year) / 2);
+    position: absolute;
+    display: inline-block;
+    width: var(--work-margin);
+    height: 1.5px;
+    background: var(--color-green);
+}
+
+.work-element:after {
+    content: attr(data-year);
+
+    position: absolute;
+    top: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--work-year);
+    height: var(--work-year);
+    
+    border-radius: 50%;
+    background: var(--color-green);
+    
+    font-size: 14px;
+    color: #fff;
+}
+
+.work-element.left {
+    margin-right: auto;
+    border-right: var(--work-border-left) solid var(--color-green);
+}
+
+.work-element.left:before {
+    right: var(--work-indent-before);
+}
+
+.work-element.left:after {
+    right: var(--work-indent-after);
+}
+
+.work-element.right {
+    margin-left: auto;
+    border-left: var(--work-border-left) solid var(--color-green);
+}
+
+.work-element.right:before {
+    left: var(--work-indent-before);
+}
+
+.work-element.right:after {
+    left: var(--work-indent-after);
+}
+
+.work-element__animation {
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+}
+
+.work-element__animation.left {
+    animation-name: work-element-move-left;
+}
+
+.work-element__animation.right {
+    animation-name: work-element-move-right;
+}
+
+@keyframes work-element-move-left {
+    0% {
+        transform: translateX(calc(0px - 110vw / 2));
+    }
+
+    90% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes work-element-move-right {
+    0% {
+        transform: translateX(calc(110vw / 2));
+    }
+
+    90% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.work-element__title, .work-element__block-title {
+    font-size: 20px;
+}
+
+.work-element__block-title {
+    margin-bottom: 5px;
+}
+
+.work-element__description {
+    font-size: 14px;
+    color: var(--color-gray);
+    margin-bottom: 15px;
+}
+
+.work-element__projects, .work-element__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.work-element__projects {
+    margin-bottom: 15px;
+}
+
+.work-element__projects-element, .work-element__skills-element {
+    padding: 8px 10px;
+    border-radius: 10px;
+
+    background: rgba(239, 222, 194, 0.295);
+
+    transition: background-color .25s ease;
+    cursor: default;
+}
+
+.work-element__projects-element:hover, .work-element__skills-element:hover {
+    background-color: rgba(224, 216, 201, 0.684);
+}
+
+.work-project {
+    position: relative;
+    background-color: rgb(255, 231, 190);
+}
+
+.work-project:hover {
+    background-color: rgb(255, 253, 247);
+}
+
+.work-tooltip {
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 250px;
+    color: var(--color-text);
+    padding: 5px 20px;
+    border: 1px solid var(--color-green);
+    border-radius: 10px;
+    left: 0;
+    bottom: calc(100% + 10px);
+
+    font-size: 15px;
+    line-height: 1.3em;
+}
+
+.work-tooltip:before, .work-tooltip:after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    border: 10px solid transparent;
+}
+
+.work-tooltip:before {
+    border-top: 7px solid var(--color-green);
+    bottom: -17px;
+}
+
+.work-tooltip:after {
+    border-top: 7px solid #fff;
+    bottom: -16px;
+}
+
+.work-project__title:hover + .work-tooltip {
+    display: inline-block;
+}
+
+.work-project__description {
+
 }
 
 /* Interests */
@@ -482,8 +711,7 @@ ul.about-me__extra {
     position: relative;
 }
 
-
-
+/* Contact me */
 
 /* Общие стили */
 
