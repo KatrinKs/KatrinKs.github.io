@@ -1,5 +1,6 @@
 /* Переменные */
 :root {
+    --color-white: #fff;
     --color-base: rgb(255, 240, 215);
     --color-bgbase: rgba(236, 222, 197, 0.255);
     --color-green: rgb(2, 153, 52);
@@ -295,7 +296,7 @@ ul.about-me__extra {
 
 .achievements:before {
     top: 0;
-    border-top: 40px solid #fff;
+    border-top: 40px solid var(--color-white);
 }
 
 .achievements:after {
@@ -325,7 +326,7 @@ ul.about-me__extra {
 }
 
 .skills-wrapper {
-    display: flex;
+    display: none;
     width: 80%;
     margin: 0 auto;
 }
@@ -343,7 +344,8 @@ ul.about-me__extra {
 
 .skills-lists__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     width: 100%;
 }
 
@@ -436,6 +438,22 @@ ul.about-me__extra {
     text-align: justify;
 }
 
+input[name="skills-filter-radio"] {
+    display: none;
+}
+
+input[name="skills-filter-radio"]:nth-of-type(1):checked ~ .skills-filters .skill-filter:nth-of-type(1),
+input[name="skills-filter-radio"]:nth-of-type(2):checked ~ .skills-filters .skill-filter:nth-of-type(2),
+input[name="skills-filter-radio"]:nth-of-type(3):checked ~ .skills-filters .skill-filter:nth-of-type(3) {
+    color: var(--color-green);
+}
+
+input[name="skills-filter-radio"]:nth-of-type(1):checked ~ .skills-wrapper:nth-of-type(2),
+input[name="skills-filter-radio"]:nth-of-type(2):checked ~ .skills-wrapper:nth-of-type(3),
+input[name="skills-filter-radio"]:nth-of-type(3):checked ~ .skills-wrapper:nth-of-type(4) {
+    display: flex;
+}
+
 /* Work */
 
 .work {
@@ -444,6 +462,7 @@ ul.about-me__extra {
 
 .work-wrapper {
     position: relative;
+    top: 30px;
     flex-direction: column;
     width: var(--work-wrapper);
     margin: 0 auto;
@@ -497,7 +516,7 @@ ul.about-me__extra {
     background: var(--color-green);
     
     font-size: 14px;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .work-element.left {
@@ -618,7 +637,7 @@ ul.about-me__extra {
 .work-tooltip {
     display: none;
     position: absolute;
-    background: #fff;
+    background: var(--color-white);
     width: 250px;
     color: var(--color-text);
     padding: 5px 20px;
@@ -805,7 +824,7 @@ ul.about-me__extra {
     background: var(--color-green);
     outline: none;
     box-shadow: none;
-    color: #fff;
+    color: var(--color-white);
 
     cursor: pointer;
     opacity: .8;
@@ -925,6 +944,31 @@ a.link:hover {
     clear: both;
 }
 
+.overlay {
+    position: relative;
+    width: 100%;
+}
+
+.overlay__block {
+    position: absolute;
+    inset: 0;
+    background: rgb(0, 0, 0, .1);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.overlay__text {
+    position: absolute;
+    padding: 0 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+.overlay__image {
+    filter: blur(20px);
+}
+
 .blur {
     filter: blur(5px);
 }
@@ -936,6 +980,7 @@ a.link:hover {
     display: flex;
     max-width: 100%;
     height: auto;
+    padding-bottom: 50px;
     overflow-x: hidden;
 }
 
@@ -963,11 +1008,9 @@ a.link:hover {
 }
 
 .slider__controls {
+    width: 100%;
     position: absolute;
-    bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    bottom: 0;
     gap: 18px;
 }
 
@@ -982,8 +1025,12 @@ a.link:hover {
     cursor: pointer;
     transition: all .25s ease;
 }
-
-.slider__controls-element:hover {
+.slider__controls-element:hover,
+.slider__input:first-of-type:checked ~ .slider__controls .slider__controls-element:first-of-type,
+.slider__input:nth-of-type(2):checked ~ .slider__controls .slider__controls-element:nth-of-type(2),
+.slider__input:nth-of-type(3):checked ~ .slider__controls .slider__controls-element:nth-of-type(3),
+.slider__input:nth-of-type(4):checked ~ .slider__controls .slider__controls-element:nth-of-type(4),
+.slider__input:nth-of-type(5):checked ~ .slider__controls .slider__controls-element:nth-of-type(5) {
     background: var(--color-green);
 }
 

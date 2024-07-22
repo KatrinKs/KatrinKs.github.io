@@ -146,7 +146,7 @@
         <h2 class="second-title block-center">Достижения</h2>
 
         <div class="achievements-list slider">
-            <input class="slider__input" type="radio" name="slider__achievements" id="slider__achievements-1">
+            <input class="slider__input" type="radio" name="slider__achievements" id="slider__achievements-1" checked>
             <input class="slider__input" type="radio" name="slider__achievements" id="slider__achievements-2">
             <input class="slider__input" type="radio" name="slider__achievements" id="slider__achievements-3">
             
@@ -203,11 +203,12 @@
                     alt="Stepic">
                 </a>
             </div>
-        </div>
-        <div class="slider__controls">
-            <label for="slider__achievements-1" class="slider__controls-element"></label>
-            <label for="slider__achievements-2" class="slider__controls-element"></label>
-            <label for="slider__achievements-3" class="slider__controls-element"></label>
+
+            <div class="slider__controls block-center">
+                <label for="slider__achievements-1" class="slider__controls-element"></label>
+                <label for="slider__achievements-2" class="slider__controls-element"></label>
+                <label for="slider__achievements-3" class="slider__controls-element"></label>
+            </div>
         </div>
     </section>
 
@@ -216,14 +217,19 @@
 
         <p class="section-description">Все оценки являются субъективными.</p>
         
-        <ul class="skills-filters block-center">
-            <li role="button" class="skill-filter link active">Все</li>
-            <li role="button" class="skill-filter link">Html/CSS</li>
-            <li role="button" class="skill-filter link">JS</li>
-            <li role="button" class="skill-filter link">C/C++</li>
-            <li role="button" class="skill-filter link">Python</li>
-            <li role="button" class="skill-filter link">Other</li>
-        </ul>
+        <input type="radio" name="skills-filter-radio" id="skills-all" checked>
+        <input type="radio" name="skills-filter-radio" id="skills-html" checked>
+        <input type="radio" name="skills-filter-radio" id="skills-js" checked>
+        <input type="radio" name="skills-filter-radio" id="skills-c" checked>
+        <input type="radio" name="skills-filter-radio" id="skills-other" checked>
+
+        <div class="skills-filters block-center">
+            <label for="skills-all" class="skill-filter">Все</label>
+            <label for="skills-html" class="skill-filter">Html/css</label>
+            <label for="skills-js" class="skill-filter">JS</label>
+            <label for="skills-c" class="skill-filter">C/C++</label>
+            <label for="skills-other" class="skill-filter">Other</label>
+        </div>
 
         <div class="skills-wrapper">
            <div class="skills-list left">
@@ -234,8 +240,11 @@
                             <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"/>
                             <path d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z" fill="white"/>
                         </svg>
+
+
                         <span class="skills-lists__title">Html</span>
                     </div>
+
                     <div class="skills-list__element">
                         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"/>
@@ -340,6 +349,7 @@
                 </p>
             </div>
         </div>
+        
     </section>
 
     <section class="work section-bgcolor" id="work">
@@ -558,7 +568,7 @@
                 </a>
             </div>
         </div>
-        <div class="slider__controls">
+        <div class="slider__controls block-center">
             <label for="slider__books-1" class="slider__controls-element"></label>
             <label for="slider__books-2" class="slider__controls-element"></label>
         </div>
