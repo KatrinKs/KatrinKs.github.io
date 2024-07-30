@@ -8,11 +8,19 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
     
 </head>
 <body>
+    <input class="checkbox" type="checkbox" name="hamburger" id="hamburger" />
+    <label for="hamburger" class="menu-hamburger">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+    </label>
+
     <div class="header-top">
-        <a href="#home" class="link logo block-center">Кальнеус&nbsp;Екатерина</a>
+        <a href="#home" class="link logo block-center">Кальнеус Екатерина</a>
 
         <nav class="navigation"> <!-- menu -->
             <ul class="menu block-center">
@@ -61,14 +69,17 @@
     </div>
 
     <header class="header" id="home">
-        <img class="header__background" src="images/dereviannaia-stena-209.png" alt="background">
+        <img class="header__background" src="images/111.jpg" alt="background">
         <div class="header__background-wrapper"></div>
         
 
         <div class="header-center">
             <div class="header-center__wrapper">
             <h1 class="name">Кальнеус&nbsp;Екатерина</h1>
-            <p class="description">Привет! Меня зовут Екатерина. Пока еще начинающий front-end разработчик, но это пока. Давайте знакомиться!</p>
+            <p class="description">Привет! Меня зовут Екатерина. 
+                <span>Пока еще начинающий front-end разработчик,</span> но это пока.
+                 Давайте знакомиться!
+            </p>
             </div>
         </div>
     </header>
@@ -575,7 +586,7 @@
     </section>
 
     <section class="contact-me" id="contact-me">
-        <div class="contact-me__wrapper blur">
+        <div class="contact-me__wrapper"><!-- blur" -->
             <h2 class="second-title">Обратная связь</h2>
 
             <form action="" class="contact-me__form">
@@ -607,11 +618,11 @@
             </form>
         </div>
 
-        <div class="form-result block-center">
-            <div class="form-result__content">
-                <p>Вы уже отправили сообщение. Я свяжусь с Вами в ближайшее время.</p>
-            </div>
-        </div>
+        <!--<div class="form-result block-center">-->
+        <!--    <div class="form-result__content">-->
+        <!--        <p>Вы уже отправили сообщение. Я свяжусь с Вами в ближайшее время.</p>-->
+        <!--    </div>-->
+        <!--</div>-->
     </section>
 
     <footer class="footer section-bgcolor-base">
@@ -632,5 +643,7 @@
             &copy;&nbsp;Кальнеус&nbsp;Екатерина 2001&nbsp;-&nbsp;2024
         </p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
