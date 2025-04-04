@@ -94,7 +94,8 @@
 
     .about-me .row {
         gap: 40px;
-
+    }
+    
     .about-me__image {
         width: 250px;
     }
@@ -146,7 +147,7 @@
     }
 
     .interests__list {
-        gap: 10px;
+        gap: 20px;
     }
 
     .interest-wrapper {
@@ -216,7 +217,7 @@
         height: 4px;
         width: 100%;
         border-radius: 10px;
-        background: rgb(0, 0, 0);
+        background: rgb(201, 198, 196);
     }
 
     .line1 {
