@@ -1,0 +1,14 @@
+{
+    "name": "Kalneus Ekaterina",
+    "short_name": "EK",
+    "icons": [
+        {
+            "src": "/images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#02990a",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

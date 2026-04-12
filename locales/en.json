@@ -1,0 +1,30 @@
+{
+    "hero": {
+        "title": "Hello everyone!",
+        "description": "My name is Ekaterina. Still a beginner front-end developer, but for now. Let's get acquainted!"
+    },
+    "about": {
+        "title": "Ekaterina Kalneus",
+        "subtitle": "Everyone starts somewhere...",
+        "text1": "Graduate of Physics Department of NSU. Started with JavaScript on Stepic, interned at Itransition, spoke at Lomonosov-2023 conference, actively volunteered.",
+        "text2": "During my studies, I learned Python, C, C++, React. Participated in Comptech winter school. Worked as a lab assistant at MTC SB RAS.",
+        "text3": "Now I'm actively improving my skills, working as an engineer at PISH NSU and looking for my dream job in web development.",
+        "birthday": "Birth date:",
+        "location": "Location:",
+        "locationValue": "Novosibirsk, Russia",
+        "education": "Education:",
+        "educationValue": "Physical Informatics, NSU"
+    },
+    "nav": {
+        "about": "About me",
+        "achievements": "Achievements",
+        "skills": "Skills",
+        "work": "Work",
+        "interests": "Interests",
+        "books": "Books",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "Ekaterina Kalneus 2001 - 2025"
+    }
+}
