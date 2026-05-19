@@ -95,7 +95,7 @@
           <div
             class="principle-card"
             v-for="(principle, index) in principles"
-            :key="principle.title"
+            :key="index" 
             v-motion="{
               initial: { opacity: 0, scale: 0.9 },
               enter: { opacity: 1, scale: 1, transition: { duration: 500, delay: index * 100 } },
@@ -123,7 +123,7 @@
           <div
             class="interest-card"
             v-for="(interest, index) in interests"
-            :key="interest.name"
+            :key="index" 
             v-motion="{
               initial: { opacity: 0, scale: 0.9 },
               enter: { opacity: 1, scale: 1, transition: { duration: 500, delay: index * 100 } },
@@ -151,7 +151,7 @@
           <div
             class="achievement-card"
             v-for="(achievement, index) in achievements"
-            :key="achievement.title"
+            :key="index" 
             v-motion="{
               initial: { opacity: 0, x: -30 },
               enter: { opacity: 1, x: 0, transition: { duration: 500, delay: index * 100 } },
